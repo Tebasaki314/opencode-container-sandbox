@@ -1,0 +1,19 @@
+services:
+  opencode:
+    build: .
+    container_name: opencode-env
+    volumes:
+      - ./data:/home/opencode/work
+      - ./config/zsh/.zshrc:/home/opencode/.zshrc  # zsh設定の同期
+      - ./config/opencode/opencode.jsonc:/home/opencode/.config/opencode/opencode.jsonc  # opencode設定の同期
+    env_file:
+      - .env
+    tty: true
+    stdin_open: true
+    # セキュリティ強化
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          memory: 2G
