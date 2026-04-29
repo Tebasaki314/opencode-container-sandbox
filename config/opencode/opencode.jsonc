@@ -29,7 +29,8 @@
   // ===============================
   "agent": {
     // 設計・要約・相談用
-    "chat": {
+    "plan": {
+      "mode": "primary",
       "description": "設計・要約・レビュー（GLM）",
       "model": "lmstudio/glm47",
       "tools": {
@@ -44,6 +45,7 @@
 
     // 実装・修正用
     "build": {
+      "mode": "primary",
       "description": "実装・修正（Qwen Coder）",
       "model": "lmstudio/qwen3",
       "tools": {
